@@ -244,16 +244,17 @@ setInterval(changeImages,3000);
 let datesIndisponibles = [];
 
 async function chargerCalendrier() {
-  const res = await fetch("const res = await fetch("https://api.allorigins.win/raw?url=TON_LIEN_ICS_ICI");");
+const res = await fetch("https://api.allorigins.win/raw?url=https://calendar.google.com/calendar/ical/contact%40dj-kiwi-sonorisation.fr/public/basic.ics");
   const txt = await res.text();
 
-  txt.split("BEGIN:VEVENT").forEach(e => {
-    const m = e.match(/DTSTART:(\d{8})/);
-    if (m) {
-      const d = m[1];
-      datesIndisponibles.push(`${d.slice(0,4)}-${d.slice(4,6)}-${d.slice(6,8)}`);
-    }
-  });
+txt.split("BEGIN:VEVENT").forEach(e => {
+  const m = e.match(/DTSTART[^:]*:(\d{8})/);
+
+  if (m) {
+    const d = m[1];
+    datesIndisponibles.push(`${d.slice(0,4)}-${d.slice(4,6)}-${d.slice(6,8)}`);
+  }
+});
 
   const calendar = new FullCalendar.Calendar(document.getElementById('calendar'), {
     initialView: 'dayGridMonth',
