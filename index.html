@@ -3,6 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+
 <title>DJ KIWI</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
@@ -16,7 +20,6 @@ body {
   overflow-x: hidden;
 }
 
-/* BANDEAU */
 .header-logo {
   width: 100%;
   height: 100px;
@@ -27,12 +30,10 @@ body {
   opacity: 0.25;
 }
 
-/* Glow */
 .glow {
   text-shadow: 0 0 10px #22c55e, 0 0 30px #22c55e;
 }
 
-/* Cards */
 .card {
   backdrop-filter: blur(10px);
   background: rgba(0,0,0,0.6);
@@ -42,7 +43,6 @@ body {
   padding: 20px;
 }
 
-/* Images PRO */
 .img-style {
   border-radius: 15px;
   border: 1px solid rgba(34,197,94,0.3);
@@ -51,32 +51,16 @@ body {
   cursor: pointer;
 }
 
-/* Taille uniforme */
 .img-fixed {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
 }
 
-/* Responsive */
-@media (min-width: 640px) {
-  .img-fixed { height: 220px; }
-}
-@media (min-width: 768px) {
-  .img-fixed { height: 260px; }
-}
-
-/* Hover léger */
 .img-style:hover {
   transform: scale(1.03);
 }
 
-/* FADE */
-#img1, #img2, #img3 {
-  transition: opacity 0.6s ease;
-}
-
-/* LIGHTBOX */
 .lightbox {
   display: none;
   position: fixed;
@@ -89,12 +73,7 @@ body {
   align-items: center;
   z-index: 999;
 }
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-}
 
-/* BOUTONS */
 .call-btn, .whatsapp, .email-btn {
   position: fixed;
   right: 20px;
@@ -120,99 +99,202 @@ body {
 
 <div class="header-logo"></div>
 
+<!-- HERO -->
+<section class="text-center py-16 px-4">
+  <h1 class="text-3xl md:text-5xl font-bold text-green-400 glow mb-4">
+    DJ KIWI SONORISATION
+  </h1>
+
+  <p class="mt-4 text-green-400 text-xl">
+    🎧🔥🔥🔥 Ambiance garantie🔥🔥🔥🎧
+  </p>
+
+  <p class="mt-2 text-green-500">
+    Pas-de-calais
+  </p>
+</section>
+
 <!-- PRESTATIONS -->
 <section class="py-16 text-center px-4">
-  <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-green-400 glow mb-10">Prestations</h2>
+  <h2 class="text-3xl font-bold text-green-400 glow mb-10">Prestations</h2>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-    <div class="card">💍 Mariage</div>
-    <div class="card">🎂 Anniversaire</div>
-    <div class="card">👶 Baptême</div>
-    <div class="card">⛪ Communion</div>
-    <div class="card">🎤 Karaoké</div>
-    <div class="card">🔥 Soirée privée</div>
+    <div class="card">💍 Mariage 💍</div>
+    <div class="card">🎂 Anniversaire 🎂 </div>
+    <div class="card">👶 Baptême 👶 </div>
+    <div class="card">⛪ Communion ⛪</div>
+    <div class="card">🎤 Karaoké 🎤</div>
+    <div class="card">🔥 Soirée privée 🔥 </div>
   </div>
 </section>
 
 <!-- AMBIANCE -->
 <section class="py-16 text-center px-4">
-  <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-green-400 glow mb-10">
+  <h2 class="text-3xl font-bold text-green-400 glow mb-10">
     Ambiance garantie
   </h2>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-
     <img id="img1" src="soiree1.jpg" class="img-style img-fixed">
     <img id="img2" src="soiree2.jpg" class="img-style img-fixed">
     <img id="img3" src="soiree3.jpg" class="img-style img-fixed">
+  </div>
+</section>
+
+<!-- POURQUOI -->
+<section class="py-16 text-center px-4">
+  <h2 class="text-3xl font-bold text-green-400 glow mb-10">
+    Pourquoi choisir DJ KIWI ?
+  </h2>
+
+  <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+    <div class="card">🎧 Matériel professionnel haut de gamme</div>
+    <div class="card">🔥 Ambiance personnalisée selon vos goûts</div>
+    <div class="card">💯 Expérience & satisfaction garantie</div>
+  </div>
+</section>
+
+<!-- AVIS -->
+<section class="py-16 text-center px-4">
+  <h2 class="text-3xl font-bold text-green-400 glow mb-10">
+    ⭐ Avis clients
+  </h2>
+
+  <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+    <div class="card">
+      <p>"Soirée incroyable, ambiance au top !"</p>
+      <p class="mt-3 text-green-400">★★★★★</p>
+    </div>
+    <div class="card">
+      <p>"DJ très pro, tout le monde a dansé !"</p>
+      <p class="mt-3 text-green-400">★★★★★</p>
+    </div>
+    <div class="card">
+      <p>"Mariage parfait grâce à DJ KIWI 🔥"</p>
+      <p class="mt-3 text-green-400">★★★★★</p>
+    </div>
+  </div>
+</section>
+
+<!-- CALENDRIER -->
+<section class="py-16 text-center px-4">
+  <h2 class="text-3xl font-bold text-green-400 glow mb-6">
+    📅 Disponibilités en temps réel
+  </h2>
+
+  <div id="calendar" class="max-w-5xl mx-auto bg-white rounded-xl p-4" style="min-height:500px;"></div>
+
+  <!-- FORMULAIRE -->
+  <div class="max-w-xl mx-auto mt-10 card">
+
+    <h3 class="text-xl text-green-400 mb-4">
+      📩 Demande de réservation
+    </h3>
+
+    <input type="text" id="nom" placeholder="Votre nom" class="w-full p-3 rounded-xl text-black mb-3">
+    <input type="email" id="email" placeholder="Votre email" class="w-full p-3 rounded-xl text-black mb-3">
+    <input type="date" id="date" class="w-full p-3 rounded-xl text-black mb-3">
+    <input type="text" id="event" placeholder="Type d'événement" class="w-full p-3 rounded-xl text-black mb-3">
+
+    <button onclick="reserver()"
+      class="bg-green-500 px-6 py-3 rounded-xl text-black font-bold hover:scale-110 transition">
+      📅 Réserver cette date
+    </button>
 
   </div>
 </section>
 
-<!-- AMBIANCES -->
-<section class="py-16 text-center px-4">
-  <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-green-400 glow mb-8">
-    Ambiance lumineuse
-  </h2>
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-    <img src="ambiance1.jpg" class="img-style img-fixed" onclick="openImg(this.src)">
-    <img src="ambiance2.jpg" class="img-style img-fixed" onclick="openImg(this.src)">
-    <img src="ambiance3.jpg" class="img-style img-fixed" onclick="openImg(this.src)">
-    <img src="ambiance4.jpg" class="img-style img-fixed" onclick="openImg(this.src)">
-    <img src="ambiance5.jpg" class="img-style img-fixed" onclick="openImg(this.src)">
-    <img src="ambiance6.jpg" class="img-style img-fixed" onclick="openImg(this.src)">
-  </div>
+<!-- CTA -->
+<section class="py-16 text-center">
+  <a href="tel:0645267951"
+     class="bg-green-500 px-10 py-5 rounded-xl text-black font-bold text-2xl hover:scale-110 transition">
+    📞 Réserver maintenant
+  </a>
 </section>
 
 <div class="header-logo"></div>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" onclick="this.style.display='none'">
-  <img id="lightbox-img">
-</div>
-
-<!-- FLOAT BUTTONS -->
+<!-- FLOAT -->
 <a href="tel:0645267951" class="call-btn">📞</a>
-<a href="https://wa.me/33645267951" class="whatsapp">💬</a>
+<a href="https://wa.me/33645267951?text=Bonjour%20je%20souhaite%20un%20devis" class="whatsapp">💬</a>
 <a href="mailto:contact@dj-kiwi-sonorisation.fr" class="email-btn">✉️</a>
 
 <script>
-function openImg(src) {
-  document.getElementById("lightbox").style.display = "flex";
-  document.getElementById("lightbox-img").src = src;
-}
-
-// SLIDER 3 IMAGES RANDOM
 const total = 15;
 
 function changeImages() {
-  const imgs = [
-    document.getElementById("img1"),
-    document.getElementById("img2"),
-    document.getElementById("img3")
-  ];
-
-  imgs.forEach(img => img.style.opacity = 0);
+  const imgs = [img1, img2, img3];
+  imgs.forEach(i => i.style.opacity = 0);
 
   setTimeout(() => {
     let used = [];
-
     for (let i = 0; i < 3; i++) {
-      let rand;
-      do {
-        rand = Math.floor(Math.random() * total) + 1;
-      } while (used.includes(rand));
-
-      used.push(rand);
-      imgs[i].src = "soiree" + rand + ".jpg";
+      let r;
+      do { r = Math.floor(Math.random()*total)+1; } while (used.includes(r));
+      used.push(r);
+      imgs[i].src = "soiree"+r+".jpg";
     }
+    imgs.forEach(i => i.style.opacity = 1);
+  },300);
+}
+setInterval(changeImages,3000);
+</script>
 
-    imgs.forEach(img => img.style.opacity = 1);
-  }, 300);
+<script>
+let datesIndisponibles = [];
+
+async function chargerCalendrier() {
+  const res = await fetch("const res = await fetch("https://api.allorigins.win/raw?url=TON_LIEN_ICS_ICI");");
+  const txt = await res.text();
+
+  txt.split("BEGIN:VEVENT").forEach(e => {
+    const m = e.match(/DTSTART:(\d{8})/);
+    if (m) {
+      const d = m[1];
+      datesIndisponibles.push(`${d.slice(0,4)}-${d.slice(4,6)}-${d.slice(6,8)}`);
+    }
+  });
+
+  const calendar = new FullCalendar.Calendar(document.getElementById('calendar'), {
+    initialView: 'dayGridMonth',
+
+    dateClick: function(info) {
+      if (datesIndisponibles.includes(info.dateStr)) {
+        alert("❌ Date déjà réservée");
+        return;
+      }
+
+      document.getElementById("date").value = info.dateStr;
+      document.getElementById("date").scrollIntoView({behavior:"smooth"});
+    },
+
+    events: datesIndisponibles.map(d => ({
+      title: "COMPLET",
+      start: d,
+      color: "red"
+    }))
+  });
+
+  calendar.render();
 }
 
-setInterval(changeImages, 3000);
+document.addEventListener("DOMContentLoaded", chargerCalendrier);
+
+function reserver() {
+  const nom = nom.value;
+  const email = email.value;
+  const date = date.value;
+  const event = event.value;
+
+  const message = `Bonjour,%0A
+Nom : ${nom}%0A
+Email : ${email}%0A
+Date : ${date}%0A
+Événement : ${event}`;
+
+  window.location.href =
+    `mailto:contact@dj-kiwi-sonorisation.fr?subject=Demande réservation DJ&body=${message}`;
+}
 </script>
 
 </body>
