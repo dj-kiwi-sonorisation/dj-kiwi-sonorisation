@@ -4,11 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="DJ professionnel dans le Pas-de-Calais : mariage, anniversaire, soirée privée, karaoké. Ambiance garantie avec DJ Kiwi Sonorisation.">
-<meta name="keywords" content="DJ Pas de Calais, DJ mariage, DJ anniversaire, DJ soirée, DJ Nord, DJ Boulogne, DJ Calais, DJ Dunkerque">
-<meta name="author" content="DJ Kiwi Sonorisation">
+<meta name="description" content="DJ professionnel dans le Pas-de-Calais">
 
-<title>DJ Pas-de-Calais | Mariage, soirée, anniversaire | DJ Kiwi</title>
+<title>DJ Kiwi Sonorisation</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 
@@ -19,16 +17,6 @@ body {
   background: black;
   color: green;
   overflow-x: hidden;
-}
-
-.header-logo {
-  width: 100%;
-  height: 100px;
-  background-image: url('logo.png');
-  background-size: 180px;
-  background-repeat: repeat-x;
-  background-position: center;
-  opacity: 0.25;
 }
 
 .glow {
@@ -54,10 +42,8 @@ body {
 
 .img-style {
   border-radius: 15px;
-  border: 1px solid rgba(34,197,94,0.3);
-  transition: transform 0.3s;
   cursor: pointer;
-	transition: transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
 }
 .img-style:hover {
   transform: scale(1.03);
@@ -72,56 +58,40 @@ body {
 .avis-img {
   transition: transform 0.3s;
 }
-.avis-img:hover {
-  transform: scale(1.03);
-}
-
-.call-btn, .whatsapp, .email-btn {
-  position: fixed;
-  right: 20px;
-  padding: 15px;
-  border-radius: 50%;
-  font-size: 22px;
-  color: black;
-}
-
-.call-btn { bottom: 90px; background: #22c55e; }
-.whatsapp { bottom: 20px; background: #25D366; }
-.email-btn { bottom: 160px; background: #22c55e; }
 </style>
 </head>
 
 <body>
 
-<div class="header-logo"></div>
-
+<!-- HEADER -->
 <section class="text-center py-16 px-4">
-  <h1 class="text-3xl md:text-5xl font-bold text-green-400 glow mb-4">
-    DJ KIWI SONORISATION
-  </h1>
-  <p class="mt-4 text-green-400 text-xl">🎧🔥🔥🔥 Ambiance garantie 🔥🔥🔥🎧</p>
-  <p class="mt-2 text-green-500">Pas-de-calais</p>
+  <h1 class="text-4xl md:text-5xl glow">DJ KIWI SONORISATION</h1>
+  <p class="mt-4 text-xl">🎧🔥 Ambiance garantie 🔥🎧</p>
 </section>
 
+<!-- PRESTATIONS -->
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-  <div class="card card-center">💍 Mariage 💍</div>
-  <div class="card card-center">🎂 Anniversaire 🎂</div>
-  <div class="card card-center">👶 Baptême 👶</div>
-  <div class="card card-center">⛪ Communion ⛪</div>
-  <div class="card card-center">🎤 Karaoké 🎤</div>
-  <div class="card card-center">🔥 Soirée privée 🔥</div>
+  <div class="card card-center">💍 Mariage</div>
+  <div class="card card-center">🎂 Anniversaire</div>
+  <div class="card card-center">👶 Baptême</div>
+  <div class="card card-center">⛪ Communion</div>
+  <div class="card card-center">🎤 Karaoké</div>
+  <div class="card card-center">🔥 Soirée privée</div>
 </div>
 
-<section class="py-16 text-center px-4">
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-    <img id="img1" src="soiree1.jpg" onclick="ouvrirGalerieSoiree(this.src)" class="img-style img-fixed">
-    <img id="img2" src="soiree2.jpg" onclick="ouvrirGalerieSoiree(this.src)" class="img-style img-fixed">
-    <img id="img3" src="soiree3.jpg" onclick="ouvrirGalerieSoiree(this.src)" class="img-style img-fixed">
+<!-- IMAGES -->
+<section class="py-16 px-4">
+  <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+    <img id="img1" class="img-style img-fixed">
+    <img id="img2" class="img-style img-fixed">
+    <img id="img3" class="img-style img-fixed">
   </div>
 </section>
 
+<!-- RESERVATION -->
 <section class="py-16 text-center px-4">
-  <h2 class="text-3xl font-bold text-green-400 glow mb-6">📩 Demande de réservation</h2>
+  <h2 class="text-3xl glow mb-6">📩 Demande de réservation</h2>
+
   <div class="max-w-xl mx-auto card">
     <input type="text" id="nom" placeholder="Votre nom" class="w-full p-3 rounded-xl text-black mb-3">
     <input type="email" id="email" placeholder="Votre email" class="w-full p-3 rounded-xl text-black mb-3">
@@ -143,10 +113,9 @@ body {
   </div>
 </section>
 
+<!-- AVIS -->
 <section class="py-16 text-center px-4">
-  <h2 class="text-3xl font-bold text-green-400 glow mb-10">
-    ⭐⭐⭐⭐⭐ Avis clients ⭐⭐⭐⭐⭐
-  </h2>
+  <h2 class="text-3xl glow mb-10">⭐ Avis clients ⭐</h2>
 
   <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
     <div id="avis1" class="card"></div>
@@ -155,16 +124,48 @@ body {
   </div>
 </section>
 
+<!-- FORMULAIRE AVIS -->
+<section class="py-16 text-center px-4">
+  <h2 class="text-3xl glow mb-6">✍️ Laisser un avis</h2>
+
+  <form action="https://formspree.io/f/xxxxabcd" method="POST" class="max-w-xl mx-auto card">
+
+    <input type="text" name="nom" placeholder="Votre prénom" required class="w-full p-3 rounded-xl text-black mb-3">
+
+    <textarea name="avis" placeholder="Votre avis..." required class="w-full p-3 rounded-xl text-black mb-3"></textarea>
+
+    <select name="note" required class="w-full p-3 rounded-xl text-black mb-3">
+      <option value="">Note</option>
+      <option>⭐⭐⭐⭐⭐</option>
+      <option>⭐⭐⭐⭐</option>
+      <option>⭐⭐⭐</option>
+      <option>⭐⭐</option>
+      <option>⭐</option>
+    </select>
+
+    <button type="submit" class="bg-green-500 px-6 py-3 rounded-xl text-black font-bold">
+      ⭐ Envoyer mon avis ⭐
+    </button>
+
+  </form>
+</section>
+
 <script>
 
-// 🔥 IMAGES
+// ===== IMAGES =====
 const imagesSoiree = Array.from({length: 21}, (_, i) => "soiree" + (i+1) + ".jpg");
 
 let currentSoireeIndex = 0;
 
-// ✅ NOUVEAU → images aléatoires au chargement
 function initImages() {
   const imgs = [img1, img2, img3];
+
+  imgs.forEach(img => {
+    const r = Math.floor(Math.random() * imagesSoiree.length);
+    img.src = imagesSoiree[r];
+    img.onclick = () => ouvrirGalerieSoiree(img.src);
+  });
+}
 
 function changeImagesAuto() {
   const imgs = [img1, img2, img3];
@@ -174,42 +175,36 @@ function changeImagesAuto() {
 
     setTimeout(() => {
       let r;
-do {
-  r = Math.floor(Math.random() * imagesSoiree.length);
-} while (img.src.includes(imagesSoiree[r]));
+      do {
+        r = Math.floor(Math.random() * imagesSoiree.length);
+      } while (img.src.includes(imagesSoiree[r]));
+
       img.src = imagesSoiree[r];
       img.style.opacity = 1;
     }, 300);
   });
 }
 
+initImages();
 setInterval(changeImagesAuto, 3000);
 
-  imgs.forEach(img => {
-    const r = Math.floor(Math.random() * imagesSoiree.length);
-    img.src = imagesSoiree[r];
-  });
-}
-
-initImages();
-
-// 🔥 GALERIE
+// galerie images
 function ouvrirGalerieSoiree(src) {
-  const filename = src.split("/").pop(); // FIX IMPORTANT
+  const filename = src.split("/").pop();
   currentSoireeIndex = imagesSoiree.indexOf(filename);
 
   const overlay = document.createElement("div");
-  overlay.id = "lightbox-soiree";
-  overlay.style = "position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);display:flex;justify-content:center;align-items:center;z-index:9999;";
+  overlay.style = "position:fixed;top:0;left:0;width:100%;height:100%;background:black;display:flex;justify-content:center;align-items:center;z-index:9999;";
 
-  overlay.innerHTML = `
-    <div style="position:relative;">
-      <img id="img-soiree" src="${src}" onclick="nextSoiree()" style="max-width:95%;max-height:80%;border-radius:15px;cursor:pointer;">
-      <div onclick="fermerSoiree()" style="position:absolute;top:-40px;right:0;font-size:30px;color:white;cursor:pointer;">✖</div>
-    </div>
-  `;
+  overlay.innerHTML = `<img id="img-soiree" src="${src}" style="max-width:90%;max-height:90%;cursor:pointer;">`;
 
   document.body.appendChild(overlay);
+
+  document.getElementById("img-soiree").onclick = nextSoiree;
+
+  overlay.onclick = (e) => {
+    if (e.target === overlay) overlay.remove();
+  };
 }
 
 function nextSoiree() {
@@ -217,11 +212,7 @@ function nextSoiree() {
   document.getElementById("img-soiree").src = imagesSoiree[currentSoireeIndex];
 }
 
-function fermerSoiree() {
-  document.getElementById("lightbox-soiree").remove();
-}
-
-// 🔥 AVIS (inchangé)
+// ===== AVIS =====
 let currentIndex = 0;
 
 const avisList = [
@@ -238,27 +229,22 @@ function ouvrirImage(index) {
   currentIndex = index;
 
   const overlay = document.createElement("div");
-  overlay.id = "lightbox";
+  overlay.style = "position:fixed;top:0;left:0;width:100%;height:100%;background:black;display:flex;justify-content:center;align-items:center;z-index:9999;";
 
-  overlay.style = "position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);display:flex;justify-content:center;align-items:center;z-index:9999;";
-
-  overlay.innerHTML = `
-    <div style="position:relative;">
-      <img id="lightbox-img" src="${imagesAvis[currentIndex]}" onclick="nextImage()" style="max-width:95%;max-height:80%;border-radius:15px;cursor:pointer;">
-      <div onclick="fermerLightbox()" style="position:absolute;top:-40px;right:0;font-size:30px;color:white;cursor:pointer;">✖</div>
-    </div>
-  `;
+  overlay.innerHTML = `<img id="lightbox-img" src="${imagesAvis[currentIndex]}" style="max-width:90%;max-height:90%;cursor:pointer;">`;
 
   document.body.appendChild(overlay);
+
+  document.getElementById("lightbox-img").onclick = nextImage;
+
+  overlay.onclick = (e) => {
+    if (e.target === overlay) overlay.remove();
+  };
 }
 
 function nextImage() {
   currentIndex = (currentIndex + 1) % imagesAvis.length;
   document.getElementById("lightbox-img").src = imagesAvis[currentIndex];
-}
-
-function fermerLightbox() {
-  document.getElementById("lightbox").remove();
 }
 
 function afficherAvis() {
@@ -284,6 +270,7 @@ function afficherAvis() {
 afficherAvis();
 setInterval(afficherAvis, 3000);
 
+// ===== RESERVATION =====
 function reserver() {
   const nom = document.getElementById("nom").value;
   const email = document.getElementById("email").value;
@@ -295,6 +282,7 @@ function reserver() {
   window.location.href =
     `mailto:contact@dj-kiwi-sonorisation.fr?subject=Demande réservation DJ&body=${message}`;
 }
+
 </script>
 
 </body>
