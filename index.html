@@ -1,3 +1,4 @@
+SAVE
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -15,6 +16,56 @@
     left: 50%;
     transform: translateX(-50%);
     bottom: 80px;
+  }
+}
+
+/* ===== BOUTON MOBILE (caché par défaut) ===== */
+.dates-btn {
+  display: none;
+}
+
+/* ===== VERSION MOBILE ===== */
+@media (max-width: 768px) {
+
+  /* cacher bouton texte */
+  .btn-dates-fixed {
+    display: none;
+  }
+
+  /* afficher bouton rond */
+  .dates-btn {
+    display: flex;
+
+    position: fixed;
+    right: 15px;
+    bottom: 240px;
+
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    font-size: 22px;
+
+    justify-content: center;
+    align-items: center;
+
+    background: #22c55e;
+    color: black;
+
+    z-index: 9999;
+    cursor: pointer;
+
+    box-shadow: 0 0 10px #22c55e, 0 0 20px #22c55e;
+  }
+}
+
+
+.dates-btn:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .dates-btn {
+    bottom: 240px;
   }
 }
 
@@ -462,6 +513,9 @@ function reserver() {
 <a href="tel:0645267951" class="call-btn">📞</a>
 <a href="https://wa.me/33645267951" target="_blank" class="whatsapp-btn">💬</a>
 <a href="mailto:contact@dj-kiwi-sonorisation.fr" class="email-btn">✉️</a>
+<a href="dates.html" class="dates-btn" title="📍 Soirée KIWI à venir # Flyer 📍">
+  📍
+</a>
 
 
 <a href="dates.html" class="btn-dates-fixed">
