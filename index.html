@@ -94,22 +94,14 @@ body {
 
 <div class="header-logo"></div>
 
-<!-- HERO -->
 <section class="text-center py-16 px-4">
   <h1 class="text-3xl md:text-5xl font-bold text-green-400 glow mb-4">
     DJ KIWI SONORISATION
   </h1>
-
-  <p class="mt-4 text-green-400 text-xl">
-    🎧🔥🔥🔥 Ambiance garantie 🔥🔥🔥🎧
-  </p>
-
-  <p class="mt-2 text-green-500">
-    Pas-de-calais
-  </p>
+  <p class="mt-4 text-green-400 text-xl">🎧🔥🔥🔥 Ambiance garantie 🔥🔥🔥🎧</p>
+  <p class="mt-2 text-green-500">Pas-de-calais</p>
 </section>
 
-<!-- PRESTATIONS -->
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
   <div class="card card-center">💍 Mariage 💍</div>
   <div class="card card-center">🎂 Anniversaire 🎂</div>
@@ -119,21 +111,16 @@ body {
   <div class="card card-center">🔥 Soirée privée 🔥</div>
 </div>
 
-<!-- AMBIANCE -->
 <section class="py-16 text-center px-4">
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-<img id="img1" src="soiree1.jpg" onclick="ouvrirGalerieSoiree(this.src)" class="img-style img-fixed">
-<img id="img2" src="soiree2.jpg" onclick="ouvrirGalerieSoiree(this.src)" class="img-style img-fixed">
-<img id="img3" src="soiree3.jpg" onclick="ouvrirGalerieSoiree(this.src)" class="img-style img-fixed">
+    <img id="img1" src="soiree1.jpg" onclick="ouvrirGalerieSoiree(this.src)" class="img-style img-fixed">
+    <img id="img2" src="soiree2.jpg" onclick="ouvrirGalerieSoiree(this.src)" class="img-style img-fixed">
+    <img id="img3" src="soiree3.jpg" onclick="ouvrirGalerieSoiree(this.src)" class="img-style img-fixed">
   </div>
 </section>
 
-<!-- RESERVATION -->
 <section class="py-16 text-center px-4">
-  <h2 class="text-3xl font-bold text-green-400 glow mb-6">
-    📩 Demande de réservation
-  </h2>
-
+  <h2 class="text-3xl font-bold text-green-400 glow mb-6">📩 Demande de réservation</h2>
   <div class="max-w-xl mx-auto card">
     <input type="text" id="nom" placeholder="Votre nom" class="w-full p-3 rounded-xl text-black mb-3">
     <input type="email" id="email" placeholder="Votre email" class="w-full p-3 rounded-xl text-black mb-3">
@@ -147,7 +134,6 @@ body {
       <option>Communion</option>
       <option>Karaoké</option>
       <option>Soirée privée</option>
-      <option>Autre</option>
     </select>
 
     <button onclick="reserver()" class="bg-green-500 px-8 py-4 rounded-xl text-black font-bold">
@@ -156,10 +142,9 @@ body {
   </div>
 </section>
 
-<!-- AVIS -->
 <section class="py-16 text-center px-4">
   <h2 class="text-3xl font-bold text-green-400 glow mb-10">
-    ⭐ Avis clients ⭐
+    ⭐⭐⭐⭐⭐ Avis clients ⭐⭐⭐⭐⭐
   </h2>
 
   <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -169,61 +154,8 @@ body {
   </div>
 </section>
 
-<!-- FORMULAIRE AVIS -->
-<section class="py-16 text-center px-4">
-  <h2 class="text-3xl font-bold text-green-400 glow mb-6">
-    ✍️ Laisser un avis
-  </h2>
-
-  <div class="max-w-xl mx-auto card">
-    <input type="text" name="nom" placeholder="Votre prénom" class="w-full p-3 rounded-xl text-black mb-3">
-    <textarea name="avis" placeholder="Votre avis..." class="w-full p-3 rounded-xl text-black mb-3"></textarea>
-
-    <select name="note" class="w-full p-3 rounded-xl text-black mb-3">
-      <option value="">Note</option>
-      <option>⭐⭐⭐⭐⭐</option>
-      <option>⭐⭐⭐⭐</option>
-      <option>⭐⭐⭐</option>
-      <option>⭐⭐</option>
-      <option>⭐</option>
-    </select>
-
-    <button onclick="envoyerAvis()" class="bg-green-500 px-6 py-3 rounded-xl text-black font-bold">
-      ⭐ Envoyer mon avis
-    </button>
-  </div>
-</section>
-
-<!-- FLOAT -->
-<a href="tel:0645267951" class="call-btn">📞</a>
-<a href="https://wa.me/33645267951" class="whatsapp">💬</a>
-<a href="mailto:contact@dj-kiwi-sonorisation.fr" class="email-btn">✉️</a>
-
 <script>
-// SLIDER IMAGES
-const total = 15;
 const imagesSoiree = Array.from({length: 15}, (_, i) => "soiree" + (i+1) + ".jpg");
-
-function changeImages() {
-  const imgs = [img1, img2, img3];
-  imgs.forEach(i => i.style.opacity = 0);
-
-  setTimeout(() => {
-    let used = [];
-    for (let i = 0; i < 3; i++) {
-      let r;
-      do { r = Math.floor(Math.random()*total)+1; } while (used.includes(r));
-      used.push(r);
-      imgs[i].src = "soiree"+r+".jpg";
-    }
-    imgs.forEach(i => i.style.opacity = 1);
-  },300);
-}
-setInterval(changeImages,3000);
-
-//////////////////////////////////////////////////
-// 🔥 GALERIE SOIREE (NOUVEAU)
-//////////////////////////////////////////////////
 
 let currentSoireeIndex = 0;
 
@@ -232,15 +164,11 @@ function ouvrirGalerieSoiree(src) {
 
   const overlay = document.createElement("div");
   overlay.id = "lightbox-soiree";
-
   overlay.style = "position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);display:flex;justify-content:center;align-items:center;z-index:9999;";
 
   overlay.innerHTML = `
     <div style="position:relative;">
-      <img id="img-soiree" src="${src}" style="max-width:95%;max-height:80%;border-radius:15px;">
-
-      <div onclick="prevSoiree()" style="position:absolute;left:10px;top:50%;font-size:40px;color:white;cursor:pointer;">⬅️</div>
-      <div onclick="nextSoiree()" style="position:absolute;right:10px;top:50%;font-size:40px;color:white;cursor:pointer;">➡️</div>
+      <img id="img-soiree" src="${src}" onclick="nextSoiree()" style="max-width:95%;max-height:80%;border-radius:15px;cursor:pointer;">
       <div onclick="fermerSoiree()" style="position:absolute;top:-40px;right:0;font-size:30px;color:white;cursor:pointer;">✖</div>
     </div>
   `;
@@ -253,18 +181,9 @@ function nextSoiree() {
   document.getElementById("img-soiree").src = imagesSoiree[currentSoireeIndex];
 }
 
-function prevSoiree() {
-  currentSoireeIndex = (currentSoireeIndex - 1 + imagesSoiree.length) % imagesSoiree.length;
-  document.getElementById("img-soiree").src = imagesSoiree[currentSoireeIndex];
-}
-
 function fermerSoiree() {
   document.getElementById("lightbox-soiree").remove();
 }
-
-//////////////////////////////////////////////////
-// 🔥 GALERIE AVIS (INCHANGÉE MAIS FIX MOBILE)
-//////////////////////////////////////////////////
 
 let currentIndex = 0;
 
@@ -288,10 +207,7 @@ function ouvrirImage(index) {
 
   overlay.innerHTML = `
     <div style="position:relative;">
-      <img id="lightbox-img" src="${imagesAvis[currentIndex]}" style="max-width:95%;max-height:80%;border-radius:15px;">
-
-      <div onclick="prevImage()" style="position:absolute;left:10px;top:50%;font-size:40px;color:white;cursor:pointer;">⬅️</div>
-      <div onclick="nextImage()" style="position:absolute;right:10px;top:50%;font-size:40px;color:white;cursor:pointer;">➡️</div>
+      <img id="lightbox-img" src="${imagesAvis[currentIndex]}" onclick="nextImage()" style="max-width:95%;max-height:80%;border-radius:15px;cursor:pointer;">
       <div onclick="fermerLightbox()" style="position:absolute;top:-40px;right:0;font-size:30px;color:white;cursor:pointer;">✖</div>
     </div>
   `;
@@ -304,51 +220,13 @@ function nextImage() {
   document.getElementById("lightbox-img").src = imagesAvis[currentIndex];
 }
 
-function prevImage() {
-  currentIndex = (currentIndex - 1 + imagesAvis.length) % imagesAvis.length;
-  document.getElementById("lightbox-img").src = imagesAvis[currentIndex];
-}
-
 function fermerLightbox() {
   document.getElementById("lightbox").remove();
 }
 
-//////////////////////////////////////////////////
-// 🔥 CLAVIER (LES 2 GALERIES)
-//////////////////////////////////////////////////
-
-document.addEventListener("keydown", function(e) {
-
-  if (document.getElementById("lightbox")) {
-    if (e.key === "ArrowRight") nextImage();
-    if (e.key === "ArrowLeft") prevImage();
-    if (e.key === "Escape") fermerLightbox();
-  }
-
-  if (document.getElementById("lightbox-soiree")) {
-    if (e.key === "ArrowRight") nextSoiree();
-    if (e.key === "ArrowLeft") prevSoiree();
-    if (e.key === "Escape") fermerSoiree();
-  }
-
-});
-
-//////////////////////////////////////////////////
-// AVIS AUTO
-//////////////////////////////////////////////////
-
 function afficherAvis() {
-  let used = [];
-
   for (let i = 1; i <= 3; i++) {
-    let rand;
-    do {
-      rand = Math.floor(Math.random() * avisList.length);
-    } while (used.includes(rand));
-
-    used.push(rand);
-
-    const avis = avisList[rand];
+    const avis = avisList[Math.floor(Math.random() * avisList.length)];
 
     if (avis.type === "text") {
       document.getElementById("avis"+i).innerHTML = `
@@ -358,7 +236,6 @@ function afficherAvis() {
       `;
     } else {
       const index = imagesAvis.indexOf(avis.src);
-
       document.getElementById("avis"+i).innerHTML = `
         <img src="${avis.src}" onclick="ouvrirImage(${index})"
         class="avis-img w-full h-48 object-contain border border-green-500 bg-black rounded-xl cursor-pointer">
@@ -370,38 +247,16 @@ function afficherAvis() {
 afficherAvis();
 setInterval(afficherAvis, 4000);
 
-//////////////////////////////////////////////////
-// FORMULAIRES (inchangé)
-//////////////////////////////////////////////////
-
 function reserver() {
   const nom = document.getElementById("nom").value;
   const email = document.getElementById("email").value;
   const date = document.getElementById("date").value;
   const event = document.getElementById("event").value;
 
-  const message = `Bonjour,%0A
-Nom : ${nom}%0A
-Email : ${email}%0A
-Date : ${date}%0A
-Événement : ${event}`;
+  const message = `Bonjour,%0A Nom : ${nom}%0A Email : ${email}%0A Date : ${date}%0A Événement : ${event}`;
 
   window.location.href =
     `mailto:contact@dj-kiwi-sonorisation.fr?subject=Demande réservation DJ&body=${message}`;
-}
-
-function envoyerAvis() {
-  const nom = document.querySelector("[name=nom]").value;
-  const avis = document.querySelector("[name=avis]").value;
-  const note = document.querySelector("[name=note]").value;
-
-  const message = `Avis client%0A
-Nom : ${nom}%0A
-Note : ${note}%0A
-Avis : ${avis}`;
-
-  window.location.href =
-    `mailto:contact@dj-kiwi-sonorisation.fr?subject=Nouvel avis client&body=${message}`;
 }
 </script>
 
