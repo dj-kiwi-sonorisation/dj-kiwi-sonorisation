@@ -350,7 +350,7 @@ body {
   <section class="py-16 text-center">
     <h2 class="text-3xl glow mb-6">Laisser un avis </h2>
 
-    <form action="https://formspree.io/f/xxxxabcd" method="POST" class="max-w-xl mx-auto card">
+    <form onsubmit="envoyerAvis(); return false;" class="max-w-xl mx-auto card">
 
       <input type="text" name="nom" placeholder="Votre prénom" required class="w-full p-3 rounded-xl text-black mb-3">
 
@@ -408,6 +408,8 @@ function changeImagesAuto() {
     }, 300);
   });
 }
+
+
 
 initImages();
 setInterval(changeImagesAuto, 3000);
@@ -507,18 +509,31 @@ function reserver() {
     `mailto:contact@dj-kiwi-sonorisation.fr?subject=Demande réservation DJ&body=${message}`;
 }
 
+function envoyerAvis() {
+  const nom = document.querySelector("[name=nom]").value;
+  const avis = document.querySelector("[name=avis]").value;
+  const note = document.querySelector("[name=note]").value;
+
+  const message = `Avis client%0A
+Nom : ${nom}%0A
+Note : ${note}%0A
+Avis : ${avis}`;
+
+  window.location.href =
+    `mailto:contact@dj-kiwi-sonorisation.fr?subject=Nouvel avis client&body=${message}`;
+}
 </script>
 
 <a href="tel:0645267951" class="call-btn">📞</a>
 <a href="https://wa.me/33645267951" target="_blank" class="whatsapp-btn">💬</a>
 <a href="mailto:contact@dj-kiwi-sonorisation.fr" class="email-btn">✉️</a>
 <a href="dates.html" class="dates-btn" title="📍 Soirée KIWI à venir # Flyer 📍">
-  📅
+   📅
 </a>
 
 
 <a href="dates.html" class="btn-dates-fixed">
-  📅🔥Soirée KIWI à venir # Flyer🔥📅
+  📅🔥 Soirée KIWI à venir # Flyer 🔥📅
 </a>
 </body>
 </html>
