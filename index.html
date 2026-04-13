@@ -57,6 +57,7 @@ body {
   border: 1px solid rgba(34,197,94,0.3);
   transition: transform 0.3s;
   cursor: pointer;
+	transition: transform 0.3s, opacity 0.3s;
 }
 .img-style:hover {
   transform: scale(1.03);
@@ -155,12 +156,47 @@ body {
 </section>
 
 <script>
-const imagesSoiree = Array.from({length: 15}, (_, i) => "soiree" + (i+1) + ".jpg");
+
+// 🔥 IMAGES
+const imagesSoiree = Array.from({length: 21}, (_, i) => "soiree" + (i+1) + ".jpg");
 
 let currentSoireeIndex = 0;
 
+// ✅ NOUVEAU → images aléatoires au chargement
+function initImages() {
+  const imgs = [img1, img2, img3];
+
+function changeImagesAuto() {
+  const imgs = [img1, img2, img3];
+
+  imgs.forEach(img => {
+    img.style.opacity = 0;
+
+    setTimeout(() => {
+      let r;
+do {
+  r = Math.floor(Math.random() * imagesSoiree.length);
+} while (img.src.includes(imagesSoiree[r]));
+      img.src = imagesSoiree[r];
+      img.style.opacity = 1;
+    }, 300);
+  });
+}
+
+setInterval(changeImagesAuto, 3000);
+
+  imgs.forEach(img => {
+    const r = Math.floor(Math.random() * imagesSoiree.length);
+    img.src = imagesSoiree[r];
+  });
+}
+
+initImages();
+
+// 🔥 GALERIE
 function ouvrirGalerieSoiree(src) {
-  currentSoireeIndex = imagesSoiree.indexOf(src);
+  const filename = src.split("/").pop(); // FIX IMPORTANT
+  currentSoireeIndex = imagesSoiree.indexOf(filename);
 
   const overlay = document.createElement("div");
   overlay.id = "lightbox-soiree";
@@ -185,6 +221,7 @@ function fermerSoiree() {
   document.getElementById("lightbox-soiree").remove();
 }
 
+// 🔥 AVIS (inchangé)
 let currentIndex = 0;
 
 const avisList = [
@@ -245,7 +282,7 @@ function afficherAvis() {
 }
 
 afficherAvis();
-setInterval(afficherAvis, 4000);
+setInterval(afficherAvis, 3000);
 
 function reserver() {
   const nom = document.getElementById("nom").value;
