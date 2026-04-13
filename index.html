@@ -19,6 +19,39 @@ body {
   overflow-x: hidden;
 }
 
+.header-logo {
+  width: 100%;
+  height: 100px;
+  background-image: url('logo.png');
+  background-size: 180px;
+  background-repeat: repeat-x;
+  background-position: center;
+  opacity: 0.25;
+}
+
+.logo-side {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 500px; /* taille du logo */
+  opacity: 0.30;
+  z-index: 0;
+  pointer-events: none; /* évite de bloquer les clics */
+}
+
+.logo-side.left {
+  left: 10px;
+}
+
+.logo-side.right {
+  right: 10px;
+}
+
+/* pour que ton contenu passe au-dessus */
+body > * {
+  position: relative;
+  z-index: 1;
+}
 .glow {
   text-shadow: 0 0 10px #22c55e, 0 0 30px #22c55e;
 }
@@ -63,6 +96,9 @@ body {
 
 <body>
 
+<div class="header-logo"></div>
+<img src="logo.png" class="logo-side left">
+<img src="logo.png" class="logo-side right">
 <!-- HEADER -->
 <section class="text-center py-16 px-4">
   <h1 class="text-4xl md:text-5xl glow">DJ KIWI SONORISATION</h1>
@@ -71,12 +107,12 @@ body {
 
 <!-- PRESTATIONS -->
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-  <div class="card card-center">💍 Mariage</div>
-  <div class="card card-center">🎂 Anniversaire</div>
-  <div class="card card-center">👶 Baptême</div>
-  <div class="card card-center">⛪ Communion</div>
-  <div class="card card-center">🎤 Karaoké</div>
-  <div class="card card-center">🔥 Soirée privée</div>
+  <div class="card card-center">💍 Mariage 💍</div>
+  <div class="card card-center">🎂 Anniversaire 🎂</div>
+  <div class="card card-center">👶 Baptême 👶</div>
+  <div class="card card-center">⛪ Communion ⛪</div>
+  <div class="card card-center">🎤 Karaoké 🎤</div>
+  <div class="card card-center">🔥 Soirée privée 🔥 </div>
 </div>
 
 <!-- IMAGES -->
@@ -90,7 +126,7 @@ body {
 
 <!-- RESERVATION -->
 <section class="py-16 text-center px-4">
-  <h2 class="text-3xl glow mb-6">📩 Demande de réservation</h2>
+  <h2 class="text-3xl glow mb-6">📩 Demande de réservation 📩 </h2>
 
   <div class="max-w-xl mx-auto card">
     <input type="text" id="nom" placeholder="Votre nom" class="w-full p-3 rounded-xl text-black mb-3">
@@ -108,7 +144,7 @@ body {
     </select>
 
     <button onclick="reserver()" class="bg-green-500 px-8 py-4 rounded-xl text-black font-bold">
-      🚀 Envoyer ma demande
+      🚀 Envoyer ma demande 🚀
     </button>
   </div>
 </section>
@@ -126,7 +162,7 @@ body {
 
 <!-- FORMULAIRE AVIS -->
 <section class="py-16 text-center px-4">
-  <h2 class="text-3xl glow mb-6">✍️ Laisser un avis</h2>
+  <h2 class="text-3xl glow mb-6">✍️ Laisser un avis ✍️</h2>
 
   <form action="https://formspree.io/f/xxxxabcd" method="POST" class="max-w-xl mx-auto card">
 
