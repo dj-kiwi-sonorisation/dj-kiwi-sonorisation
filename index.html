@@ -9,6 +9,32 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
+
+.btn-dates {
+  display: inline-block;
+  background: black;
+  color: #22c55e;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  border: 2px solid #22c55e;
+
+  /* effet néon */
+  box-shadow: 0 0 10px #22c55e, 0 0 20px #22c55e;
+
+  transition: 0.3s;
+}
+
+.btn-dates:hover {
+  background: #22c55e;
+  color: black;
+
+  transform: scale(1.05);
+
+  box-shadow: 0 0 20px #22c55e, 0 0 40px #22c55e;
+}
+
 html {
   overflow-x: hidden;
 }
@@ -407,5 +433,9 @@ function reserver() {
 <a href="https://wa.me/33645267951" target="_blank" class="whatsapp-btn">💬</a>
 <a href="mailto:contact@dj-kiwi-sonorisation.fr" class="email-btn">✉️</a>
 
+
+<a href="dates.html" class="btn-dates">
+  📍 Voir mes dates publiques
+</a>
 </body>
 </html>
