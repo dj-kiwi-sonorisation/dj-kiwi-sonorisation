@@ -302,13 +302,40 @@ body {
   </div>
 
   <!-- IMAGES -->
-  <section class="py-16">
-    <div class="grid md:grid-cols-3 gap-6">
-      <img id="img1" class="img-style img-fixed">
-      <img id="img2" class="img-style img-fixed">
-      <img id="img3" class="img-style img-fixed">
-    </div>
-  </section>
+<section class="py-16 text-center">
+
+  <h2 class="text-3xl glow mb-6">
+    📸 Mes dernières prestations
+  </h2>
+
+<img
+  id="galerie"
+  src="soiree1.jpg"
+  class="img-style"
+  style="
+      max-width:100%;
+      max-height:600px;
+      border-radius:15px;
+      cursor:pointer;
+      margin:auto;
+    "
+>
+
+<div style="margin-top:20px;">
+
+  <button onclick="precedente()" class="bg-green-500 px-4 py-2 rounded-xl text-black font-bold mx-2">
+    ⬅ 
+  </button>
+
+<button onclick="suivante()" class="bg-green-500 px-4 py-2 rounded-xl text-black font-bold mx-2">
+     ➡
+  </button>
+
+</div>
+
+
+
+</section>
 
 <!-- PLAYLIST SPOTIFY -->
 <section class="py-16 text-center">
@@ -410,67 +437,42 @@ body {
 
 <script>
 
-// ===== IMAGES =====
-const imagesSoiree = Array.from({length: 21}, (_, i) => "soiree" + (i+1) + ".jpg");
+// ===== GALERIE PHOTOS =====
 
-let currentSoireeIndex = 0;
+// ===== GALERIE PHOTOS =====
 
-function initImages() {
-  const imgs = [img1, img2, img3];
+const imagesSoiree = Array.from(
+  { length: 35 },
+  (_, i) => "soiree" + (i + 1) + ".jpg"
+);
 
-  imgs.forEach(img => {
-    const r = Math.floor(Math.random() * imagesSoiree.length);
-    img.src = imagesSoiree[r];
-    img.onclick = () => ouvrirGalerieSoiree(img.src);
-  });
+let currentSoiree = 0;
+
+const galerie = document.getElementById("galerie");
+
+function suivante() {
+
+  currentSoiree++;
+
+  if (currentSoiree >= imagesSoiree.length) {
+    currentSoiree = 0;
+  }
+
+  galerie.src = imagesSoiree[currentSoiree];
 }
 
-function changeImagesAuto() {
-  const imgs = [img1, img2, img3];
+function precedente() {
 
-  imgs.forEach(img => {
-    img.style.opacity = 0;
+  currentSoiree--;
 
-    setTimeout(() => {
-      let r;
-      do {
-        r = Math.floor(Math.random() * imagesSoiree.length);
-      } while (img.src.includes(imagesSoiree[r]));
+  if (currentSoiree < 0) {
+    currentSoiree = imagesSoiree.length - 1;
+  }
 
-      img.src = imagesSoiree[r];
-      img.style.opacity = 1;
-    }, 300);
-  });
+  galerie.src = imagesSoiree[currentSoiree];
 }
 
-
-
-initImages();
-setInterval(changeImagesAuto, 3000);
-
-// galerie
-function ouvrirGalerieSoiree(src) {
-  const filename = src.split("/").pop();
-  currentSoireeIndex = imagesSoiree.indexOf(filename);
-
-  const overlay = document.createElement("div");
-  overlay.style = "position:fixed;top:0;left:0;width:100%;height:100%;background:black;display:flex;justify-content:center;align-items:center;z-index:9999;";
-
-  overlay.innerHTML = `<img id="img-soiree" src="${src}" style="max-width:90%;max-height:90%;cursor:pointer;">`;
-
-  document.body.appendChild(overlay);
-
-  document.getElementById("img-soiree").onclick = nextSoiree;
-
-  overlay.onclick = (e) => {
-    if (e.target === overlay) overlay.remove();
-  };
-}
-
-function nextSoiree() {
-  currentSoireeIndex = (currentSoireeIndex + 1) % imagesSoiree.length;
-  document.getElementById("img-soiree").src = imagesSoiree[currentSoireeIndex];
-}
+galerie.addEventListener("click", suivante);
 
 // ===== AVIS =====
 let currentIndex = 0;
@@ -568,7 +570,6 @@ Avis : ${avis}`;
 
 <a href="dates.html" class="btn-dates-fixed">
   📅🔥 Soirée KIWI à venir # Flyer 🔥📅
-</a>
 </a>
 
 <footer style="text-align:center;padding:25px 10px;border-top:1px solid #22c55e;margin-top:40px;">
